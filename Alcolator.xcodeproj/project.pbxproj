@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F1CD8121A11899100C0B128 /* WhiskeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1CD8111A11899100C0B128 /* WhiskeyViewController.m */; };
+		2F678E751A1C1A0C00E8958D /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F678E741A1C1A0C00E8958D /* MainMenuViewController.m */; };
 		2FCEE0CC19F5FFBB00C568EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCEE0CB19F5FFBB00C568EA /* Foundation.framework */; };
 		2FCEE0CE19F5FFBB00C568EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCEE0CD19F5FFBB00C568EA /* CoreGraphics.framework */; };
 		2FCEE0D019F5FFBB00C568EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCEE0CF19F5FFBB00C568EA /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* Begin PBXFileReference section */
 		2F1CD8101A11899100C0B128 /* WhiskeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WhiskeyViewController.h; path = ../WhiskeyViewController.h; sourceTree = "<group>"; };
 		2F1CD8111A11899100C0B128 /* WhiskeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiskeyViewController.m; path = ../WhiskeyViewController.m; sourceTree = "<group>"; };
+		2F678E731A1C1A0C00E8958D /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = ../MainMenuViewController.h; sourceTree = "<group>"; };
+		2F678E741A1C1A0C00E8958D /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = ../MainMenuViewController.m; sourceTree = "<group>"; };
 		2FCEE0C819F5FFBB00C568EA /* Alcolator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alcolator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCEE0CB19F5FFBB00C568EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2FCEE0CD19F5FFBB00C568EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 			children = (
 				2F1CD8101A11899100C0B128 /* WhiskeyViewController.h */,
 				2F1CD8111A11899100C0B128 /* WhiskeyViewController.m */,
+				2F678E731A1C1A0C00E8958D /* MainMenuViewController.h */,
+				2F678E741A1C1A0C00E8958D /* MainMenuViewController.m */,
 				2FCEE0DA19F5FFBB00C568EA /* AppDelegate.h */,
 				2FCEE0DB19F5FFBB00C568EA /* AppDelegate.m */,
 				2FCEE0E019F5FFBB00C568EA /* ViewController.h */,
@@ -254,6 +259,7 @@
 				2F1CD8121A11899100C0B128 /* WhiskeyViewController.m in Sources */,
 				2FCEE0DC19F5FFBB00C568EA /* AppDelegate.m in Sources */,
 				2FCEE0D819F5FFBB00C568EA /* main.m in Sources */,
+				2F678E751A1C1A0C00E8958D /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

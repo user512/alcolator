@@ -10,4 +10,5 @@
 
 @interface WhiskeyViewController : ViewController
 
+- (void)buttonPressed:(UIButton *)sender;
 @end
