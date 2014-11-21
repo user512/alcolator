@@ -10,15 +10,31 @@
 #import "MainMenuViewController.h"
 
 @interface MainMenuViewController ()
-
+@property (weak, nonatomic) UIButton *winePressed;
+@property (weak, nonatomic) UIButton *whiskeyPressed;
 @end
 
 
 @implementation MainMenuViewController
 
+-(void) loadView {
+    self.view = [[UIView alloc] init];
+    UIButton *button = [UIButton buttonWithType: UIButtonTypeSystem];
+    [self.view addSubview:button];
+    self.winePressed = button;
+    self.whiskeyPressed = button;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.winePressed addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.winePressed setTitle:NSLocalizedString(@"Wine!", @"wine") forState:UIControlStateNormal];
+    [self.whiskeyPressed addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.whiskeyPressed setTitle:NSLocalizedString(@"Whiskey!", @"whiskey") forState:UIControlStateNormal];
+
+    self.title = NSLocalizedString(@"Select Alcolator", @"select alcolator");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +50,14 @@
 - (void) whiskeyPressed:(UIButton *) sender {
     WhiskeyViewController *whiskeyVC = [[WhiskeyViewController alloc] init];
     [self.navigationController pushViewController:whiskeyVC animated:YES];
+}
+
+- (void) viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    
+    self.winePressed.frame = CGRectMake(20, 64 + 20, 20, 44);
+    self.whiskeyPressed.frame = CGRectMake(100, 64 + 20, 280, 44);
 }
 
 /*

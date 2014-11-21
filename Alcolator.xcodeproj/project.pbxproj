@@ -116,8 +116,8 @@
 		2FCEE0D119F5FFBB00C568EA /* Alcolator */ = {
 			isa = PBXGroup;
 			children = (
-				2F1CD8101A11899100C0B128 /* WhiskeyViewController.h */,
 				2F1CD8111A11899100C0B128 /* WhiskeyViewController.m */,
+				2F1CD8101A11899100C0B128 /* WhiskeyViewController.h */,
 				2F678E731A1C1A0C00E8958D /* MainMenuViewController.h */,
 				2F678E741A1C1A0C00E8958D /* MainMenuViewController.m */,
 				2FCEE0DA19F5FFBB00C568EA /* AppDelegate.h */,

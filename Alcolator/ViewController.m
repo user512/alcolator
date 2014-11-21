@@ -206,6 +206,8 @@
     
     CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
     self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
+    
+    
 }
 
 @end
