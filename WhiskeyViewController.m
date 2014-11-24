@@ -75,6 +75,10 @@
     
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
     self.resultLabel.text = resultText;
+    
+    // Display number of shot in title
+    int numberOfWhiskeyinTitle = (int)roundf(numberOfWhiskeyGlassesForEquivalentAlcoholAmount );
+    self.title = [NSString stringWithFormat:@"Wine (%d glasses)", numberOfWhiskeyinTitle];
 }
 
 

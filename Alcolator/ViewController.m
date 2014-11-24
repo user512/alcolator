@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) UIButton *calculateButton;
 @property (weak, nonatomic) UITapGestureRecognizer *hideKeyboardTapGestureRecognizer;
+
 // Why don't I need this line?
 //@property (nonatomic, retain) UIColor *textColor;
 
@@ -40,7 +41,7 @@
     UILabel *label = [[UILabel alloc] init];
     UIButton *button = [UIButton buttonWithType: UIButtonTypeSystem];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
-    label.font = [UIFont fontWithName:@"American Typewriter" size:20];
+    label.font = [UIFont fontWithName:@"American Typewriter" size:18];
     textField.font = [UIFont fontWithName:@"Marker Felt" size:20];
     //button.titleLabel.font = [UIFont fontWithName:@"American Typewriter" size:25];
     //button.tintColor = [UIColor purpleColor];
@@ -112,8 +113,7 @@
     // Change textField background color
     self.beerPercentTextField.backgroundColor = [UIColor blackColor];
     
-    self.title = NSLocalizedString(@"Wine", @"wine");
-    
+    self.title = NSLocalizedString(@"Wine", nil);
 }
 
 - (void)didReceiveMemoryWarning
@@ -177,6 +177,11 @@
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ contains as much alcohol as %.0f %@ of wine.", nil), numberOfBeers, beerText, numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
     self.resultLabel.text = resultText;
     
+    // Display number of wine glasses in title)
+    int numberofWineGlaassinTitle = (int)roundf(numberOfWineGlassesForEquivalentAlcoholAmount);
+    self.title = [NSString stringWithFormat:@"Wine (%d glasses)", numberofWineGlaassinTitle];
+
+    
 }
 
 
@@ -196,7 +201,7 @@
     CGFloat itemHeight = 44;
 
     
-    self.beerPercentTextField.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
+    self.beerPercentTextField.frame = CGRectMake(padding, padding + 44 + 20, itemWidth, itemHeight);
     
     CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
     self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);

@@ -12,6 +12,7 @@
 @interface MainMenuViewController ()
 @property (weak, nonatomic) UIButton *winePressed;
 @property (weak, nonatomic) UIButton *whiskeyPressed;
+
 @end
 
 
@@ -19,19 +20,21 @@
 
 -(void) loadView {
     self.view = [[UIView alloc] init];
-    UIButton *button = [UIButton buttonWithType: UIButtonTypeSystem];
-    [self.view addSubview:button];
-    self.winePressed = button;
-    self.whiskeyPressed = button;
+    UIButton *button1 = [UIButton buttonWithType: UIButtonTypeSystem];
+    UIButton *button2 = [UIButton buttonWithType: UIButtonTypeSystem];
+    [self.view addSubview:button1];
+    [self.view addSubview:button2];
+    self.winePressed = button1;
+    self.whiskeyPressed = button2;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.winePressed addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.winePressed addTarget:self action:@selector(winePressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.winePressed setTitle:NSLocalizedString(@"Wine!", @"wine") forState:UIControlStateNormal];
-    [self.whiskeyPressed addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.whiskeyPressed addTarget:self action:@selector(whiskeyPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.whiskeyPressed setTitle:NSLocalizedString(@"Whiskey!", @"whiskey") forState:UIControlStateNormal];
 
     self.title = NSLocalizedString(@"Select Alcolator", @"select alcolator");
@@ -56,8 +59,8 @@
     [super viewWillLayoutSubviews];
     
     
-    self.winePressed.frame = CGRectMake(20, 64 + 20, 20, 44);
-    self.whiskeyPressed.frame = CGRectMake(100, 64 + 20, 280, 44);
+    self.winePressed.frame = CGRectMake(50, 64 + 20, 80, 44);
+    self.whiskeyPressed.frame = CGRectMake(180, 64 + 20, 80, 44);
 }
 
 /*
