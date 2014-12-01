@@ -28,10 +28,23 @@
 
 @implementation ViewController
 
+-(instancetype) init {
+    self = [super init];
+    
+    if (self) {
+        self.title = NSLocalizedString(@"Wine", @"wine");
+    
+    // Since we don't have icons, move the title to the middle of the tab bar
+        [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+    }
+    
+    return self;
+}
 
 -(void)loadView {
     // Allocate and initialize the all-encompassing view
     // What does it mean?
+    
     self.view = [[UIView alloc] init];
     
     // Allocate and initialized each of our views and the gesture recognizer
@@ -64,7 +77,7 @@
     self.resultLabel = label;
     self.calculateButton = button;
     self.hideKeyboardTapGestureRecognizer = tap;
-    
+
 }
 
 - (void)viewDidLoad
@@ -73,10 +86,9 @@
     // Calls the superclass's implementation
     [super viewDidLoad];
 
-    
     //
 	// Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.741 green:0.925 blue:0.714 alpha:1];
     
     // Tells the text field that 'self', this instance of 'BLCViewController' should be treated as the text field's delegate
     self.beerPercentTextField.delegate = self;
@@ -113,7 +125,8 @@
     // Change textField background color
     self.beerPercentTextField.backgroundColor = [UIColor blackColor];
     
-    self.title = NSLocalizedString(@"Wine", nil);
+    //self.title = NSLocalizedString(@"Wine", nil);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,10 +147,13 @@
     
 }
 
+
+
 //- (IBAction)sliderValueDidChange:(UISlider *)sender {
 - (void)sliderValueDidChange: (UISlider *)sender {
     
     [self buttonPressed: nil];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
     
 }
 
@@ -201,7 +217,7 @@
     CGFloat itemHeight = 44;
 
     
-    self.beerPercentTextField.frame = CGRectMake(padding, padding + 44 + 20, itemWidth, itemHeight);
+    self.beerPercentTextField.frame = CGRectMake(padding, padding + 20, itemWidth, itemHeight);
     
     CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
     self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);

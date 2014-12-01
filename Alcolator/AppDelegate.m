@@ -8,13 +8,14 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "MainMenuViewController.h"
+#import "WhiskeyViewController.h"
 
 
-@implementation AppDelegate
+@implementation AppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Override point for customization after application launch.
@@ -25,14 +26,41 @@
     
     //Override point for customization after application launch.
     
-    MainMenuViewController *mainMenuViewController = [[MainMenuViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
-    self.window.rootViewController = navigationController;
+    //For Navgation page (Disabled for Tabbed Navigation)
+    /*
+     MainMenuViewController *mainMenuViewController = [[MainMenuViewController alloc] init];
+     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
+     self.window.rootViewController = navigationController;
+     */
     
+    //Setting UITabBarController as root view controller
+    ViewController *wineVC = [[ViewController alloc] init];
+    WhiskeyViewController *whiskeyVC = [[WhiskeyViewController alloc] init];
+    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+    tabBarVC.viewControllers = @[wineVC, whiskeyVC];
+    
+    tabBarVC.delegate = self; //I moved this code to here
+    
+    self.window.rootViewController = tabBarVC;
     [self.window makeKeyAndVisible];
     return YES;
+    
+    //tabBarVC.delegate = self; When it's here, it won't work
 }
-							
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController;
+{
+    if(tabBarController.selectedIndex == 0)
+    {
+        NSLog(@"New view controller selected: [Wine]"); // Print into console
+    }
+    else if(tabBarController.selectedIndex == 1)
+    {
+        NSLog(@"New view controller selected: [Whiskey]"); // Print into console
+    }
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

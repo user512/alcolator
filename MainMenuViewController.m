@@ -19,6 +19,7 @@
 @implementation MainMenuViewController
 
 -(void) loadView {
+    
     self.view = [[UIView alloc] init];
     UIButton *button1 = [UIButton buttonWithType: UIButtonTypeSystem];
     UIButton *button2 = [UIButton buttonWithType: UIButtonTypeSystem];

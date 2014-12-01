@@ -35,9 +35,22 @@
 }
 */
 
+
+-(instancetype) init {
+    self = [super init];
+    if (self) {
+        self.title = NSLocalizedString(@"Whiskey", nil);
+    }
+    return self;
+}
+ 
+
+
 - (void) viewDidLoad {
     [super viewDidLoad];
+    
     self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+    self.view.backgroundColor = [UIColor colorWithRed:0.992 green:0.992 blue:0.588 alpha:1];
 }
 
 - (void)buttonPressed:(UIButton *)sender;
@@ -78,7 +91,7 @@
     
     // Display number of shot in title
     int numberOfWhiskeyinTitle = (int)roundf(numberOfWhiskeyGlassesForEquivalentAlcoholAmount );
-    self.title = [NSString stringWithFormat:@"Wine (%d glasses)", numberOfWhiskeyinTitle];
+    self.title = [NSString stringWithFormat:@"Whiskey (%d shots)", numberOfWhiskeyinTitle];
 }
 
 
